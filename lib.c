@@ -10,7 +10,7 @@ int putc(unsigned char c) {
 }
 
 // 文字列送信
-int puts(unsigned char *c) {
+int puts(unsigned char *str) {
     while (*str)
     {
         putc(*(str++));
