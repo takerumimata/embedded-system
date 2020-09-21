@@ -16,6 +16,12 @@ H8／3069Fを用いた組み込みOSの自作プロジェクト。以下、用�
 - binutils
 - gcc
 - make
+
+以下のコマンドで、開発に必要な物はあらかた揃えてくれる
+```zsh
+$ apt install build-essential
+```
+
 * * * 
 
 # OSの作成
