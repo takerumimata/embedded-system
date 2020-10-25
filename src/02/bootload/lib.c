@@ -11,6 +11,29 @@ void *memset(void *b, int c, long len){
     return b;
 }
 
+// メモリのコピーを行う
+void *memcopy(void *dst, const void *src, long len){
+    char *d = dst;
+    const char *s = src;
+    for(; len > 0; len--){
+        *(d++) = *(s++);
+    }
+    return dst;
+}
+
+// メモリ上のデータの比較
+int memcmp(const void *b1, const void *b2, long len){
+    const char *p1 = b1, *p2 = b2; 
+    for(; len > 0; len--){
+        if(*p1 != *p2){
+            return (*p1 > *p2) ? 1 : -1;
+        }
+        p1++;
+        p2++;
+    }
+    return 0;
+}
+
 // 1文字送信
 int putc(unsigned char c) {
     if(c == '\n')
