@@ -2,6 +2,15 @@
 #include "serial.h"
 #include "lib.h"
 
+// メモリを特定のパターンで埋める
+void *memset(void *b, int c, long len){
+    char *p;
+    for( p = b; len > 0; len--){
+        *(p++) = c;
+    }
+    return b;
+}
+
 // 1文字送信
 int putc(unsigned char c) {
     if(c == '\n')
