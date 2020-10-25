@@ -34,6 +34,48 @@ int memcmp(const void *b1, const void *b2, long len){
     return 0;
 }
 
+// 文字列の長さを返す関数
+int strlen(const char *s){
+    int len;
+    for(len = 0; *s; s++, len++) 
+        ;
+    return len;
+}
+
+// 文字列のコピーを行う
+char *strcpy(char *dst, const char *src){
+    char *d = dst;
+    for(;; dst++, src++) {
+        *dst = *src;
+        if(!*src) break;
+    }
+    return d;
+}
+
+// 文字列の比較を行う
+int strcmp(const char *s1, const char *s2){
+    while(*s1 || *s2) {
+        if (*s1 != *s2){
+            return (*s1 > *s2) ? 1 :-1;
+        }
+        s1++;
+        s2++;
+    }
+    return 0;
+}
+
+// 長さ制限ありで文字列の比較を行う
+int strncmp(const char *s1, const char *s2, int len){
+    while((*s1 || *s2) && (len >0)) {
+        if(*s1 != *s2)
+            return (*s1 > *s2) ? 1 :-1;
+        s1++;
+        s2++;
+        len--;
+    }
+    return 0;
+}
+
 // 1文字送信
 int putc(unsigned char c) {
     if(c == '\n')
