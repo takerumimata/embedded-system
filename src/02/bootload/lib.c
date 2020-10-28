@@ -92,3 +92,25 @@ int puts(unsigned char *str) {
     return 0;
     
 }
+
+// 数値の16進数表示
+int putxval(unsigned long value, int column){
+    char buf[9];  // 文字出力用バッファ
+    char *p;
+
+    // 下の桁から処理するので、バッファの終端から利用する
+    p = buf + sizeof(buf) - 1;
+    *(p--) = '\0';
+
+    if(!value && !column)
+        column++;
+    while(value || column) {
+        *(p--) = "0123456789abcdef"[value & 0xf];
+        value >>=4;
+        if(column) column--;
+    }
+
+    puts(p + 1); // バッファの内容を出力する
+
+    return 0;
+}
