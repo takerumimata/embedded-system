@@ -7,6 +7,9 @@ int main(void) {
 
     puts("Hello World!\n"); // Hello World!を出力
 
+    putxval(0x10, 0); puts("\n");
+    putxval(0xffff, 0); puts("\n");
+
     while (1)   // 無限ループで停止
         ;
     
