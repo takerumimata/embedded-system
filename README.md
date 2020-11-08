@@ -22,6 +22,12 @@ H8／3069Fを用いた組み込みOSの自作プロジェクト。以下、用�
 $ apt install build-essential
 ```
 
+# binutilsのInstall
+バイナリをあれこれするツール。macの場合はhomebrewを利用して導入する。
+```zsh 
+$ brew update && brew install binutils
+```
+
 * * * 
 
 # OSの作成
